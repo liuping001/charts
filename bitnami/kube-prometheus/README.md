@@ -6,7 +6,7 @@ Prometheus Operator provides easy monitoring definitions for Kubernetes services
 
 [Overview of Prometheus Operator](https://github.com/coreos/prometheus-operator)
 
-Trademarks: This software listing is packaged by Bitnami. The respective trademarks mentioned in the offering are owned by the respective companies, and use of them does not imply any affiliation or endorsement.
+Trademarks(商标权): This software listing is packaged by Bitnami. The respective trademarks mentioned in the offering are owned by the respective companies, and use of them does not imply any affiliation or endorsement.
                            
 ## TL;DR
 
@@ -19,7 +19,7 @@ $ helm install my-release bitnami/kube-prometheus
 
 This chart bootstraps [Prometheus Operator](https://github.com/bitnami/bitnami-docker-prometheus-operator) on [Kubernetes](https://kubernetes.io) using the [Helm](https://helm.sh) package manager.
 
-In the default configuration the chart deploys the following components on the Kubernetes cluster:
+In the default configuration the chart deploys the following components(组件，成分) on the Kubernetes cluster:
 
 - [Prometheus Operator](https://github.com/prometheus-operator/prometheus-operator)
 - [Prometheus](https://github.com/prometheus/prometheus/)
@@ -27,11 +27,11 @@ In the default configuration the chart deploys the following components on the K
 
 **IMPORTANT**
 
-Only one instance of the Prometheus Operator component should be running in the cluster. If you wish to deploy this chart to **manage multiple instances** of Prometheus in your Kubernetes cluster, you **have to disable** the installation of the Prometheus Operator component using the `operator.enabled=false` chart installation argument.
+Only one instance of the Prometheus Operator component should be running in the cluster. If you wish(希望) to deploy this chart to **manage multiple instances** of Prometheus in your Kubernetes cluster, you **have to disable** the installation of the Prometheus Operator component using the `operator.enabled=false` chart installation argument.
 
 Bitnami charts can be used with [Kubeapps](https://kubeapps.com/) for deployment and management of Helm Charts in clusters.
 
-## Prerequisites
+## Prerequisites(前提)
 
 - Kubernetes 1.16+
 - Helm 3.2.0+
@@ -62,7 +62,7 @@ To uninstall/delete the `my-release` release:
 $ helm delete my-release
 ```
 
-The command removes all the Kubernetes components associated with the chart and deletes the release. Use the flag `--purge` to delete all history too.
+The command removes all the Kubernetes components associated(有关联的) with the chart and deletes the release. Use the flag `--purge(清除)` to delete all history too.
 
 ## Parameters
 
@@ -79,7 +79,7 @@ The command removes all the Kubernetes components associated with the chart and 
 
 | Name               | Description                                                                                                | Value |
 | ------------------ | ---------------------------------------------------------------------------------------------------------- | ----- |
-| `nameOverride`     | String to partially override `kube-prometheus.name` template with a string (will prepend the release name) | `""`  |
+| `nameOverride`     | String to partially(部分的) override `kube-prometheus.name` template with a string (will prepend(在前面追加) the release name) | `""`  |
 | `fullnameOverride` | String to fully override `kube-prometheus.fullname` template with a string                                 | `""`  |
 | `extraDeploy`      | Array of extra objects to deploy with the release                                                          | `[]`  |
 
@@ -276,7 +276,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `prometheus.remoteRead`                                               | The remote_read spec configuration for Prometheus                                                                                | `[]`                     |
 | `prometheus.remoteWrite`                                              | The remote_write spec configuration for Prometheus                                                                               | `[]`                     |
 | `prometheus.storageSpec`                                              | Prometheus StorageSpec for persistent data                                                                                       | `{}`                     |
-| `prometheus.persistence.enabled`                                      | Use PVCs to persist data. If the storageSpec is provided this will not take effect.                                              | `false`                  |
+| `prometheus.persistence.enabled`                                      | Use PVCs to persist(坚持) data. If the storageSpec is provided this will not take effect.                                              | `false`                  |
 | `prometheus.persistence.storageClass`                                 | Persistent Volume Storage Class                                                                                                  | `""`                     |
 | `prometheus.persistence.accessModes`                                  | Persistent Volume Access Modes                                                                                                   | `["ReadWriteOnce"]`      |
 | `prometheus.persistence.size`                                         | Persistent Volume Size                                                                                                           | `8Gi`                    |
@@ -528,7 +528,7 @@ $ helm install my-release \
 
 The above command sets the Prometheus Operator `logLevel` to `debug`. Additionally it sets the `prometheus.replicaCount` to `5`.
 
-Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
+Alternatively(或者), a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
 
 ```bash
 $ helm install my-release -f values.yaml bitnami/kube-prometheus
@@ -538,15 +538,15 @@ $ helm install my-release -f values.yaml bitnami/kube-prometheus
 
 ## Configuration and installation details
 
-### [Rolling vs Immutable tags](https://docs.bitnami.com/containers/how-to/understand-rolling-tags-containers/)
+### [Rolling(起伏、摇摆) vs Immutable(不可改变) tags](https://docs.bitnami.com/containers/how-to/understand-rolling-tags-containers/)
 
 It is strongly recommended to use immutable tags in a production environment. This ensures your deployment does not change automatically if the same tag is updated with a different image.
 
-Bitnami will release a new chart updating its containers if a new version of the main container, significant changes, or critical vulnerabilities exist.
+Bitnami will release a new chart updating its containers if a new version of the main container, significant(有重大意义的) changes, or critical(危急的) vulnerabilities(缺陷、脆弱点) exist.
 
 ### Additional scrape configurations
 
-The following values have been deprecated. See [Upgrading](#upgrading) below.
+The following values have been deprecated(弃用). See [Upgrading](#upgrading) below.
 
 ```console
 prometheus.additionalScrapeConfigsExternal.enabled
